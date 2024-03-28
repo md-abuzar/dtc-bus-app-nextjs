@@ -1,0 +1,136 @@
+.body {
+  background-color: #eceaea;
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+.navbar {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav .navbar-nav li a{
+  color: #343a40 !important;
+  }
+
+.bus {
+  color:#50623A;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.route {
+  color: orange;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.navbar-brand
+{
+  font-size: 22px;
+  margin: 0px;
+}
+
+  .form-container {
+    background-color: #DBE7C9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+.autocomplete-container {
+      position: relative;
+    }
+
+    .autocomplete-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border: 0.5px solid #ccc;
+      border-top: none;
+      max-height: 175px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+
+    .suggestion-item {
+      text-align: start;
+      padding: 10px;
+      padding-left: 8px;
+      cursor: pointer;
+      border-top: 1px solid #ccc;
+    }
+
+    .suggestion-item:hover {
+      background-color: #f0f0f0;
+    }
+  
+    ul.timeline {
+      list-style-type: none;
+      position: relative;
+  }
+  ul.timeline:before {
+      content: ' ';
+      background:#50623A;
+      display: inline-block;
+      position: absolute;
+      left: 29px;
+      width: 2px;
+      height: 100%;
+      z-index: 400;
+  }
+  ul.timeline > li {
+      margin: 20px 0;
+      padding-left: 20px;
+  }
+  ul.timeline > li:before {
+      content: ' ';
+      background: white;
+      display: inline-block;
+      position: absolute;
+      border-radius: 50%;
+      border: 3px solid #50623A;
+      left: 20px;
+      width: 20px;
+      height: 20px;
+      z-index: 400;
+  }
+
+  .col-sm-4 {
+    background-color:white;
+  }
+
+
+  
+  .bus-info {
+    background-color:#c8e490; 
+    margin-top: -8px ;
+  }
+
+  .bus-info-header {
+    background-color:#50623A; 
+    color: #fff;
+  }
+
+
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+}
+
