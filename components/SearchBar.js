@@ -12,7 +12,7 @@ const SearchBar = () => {
     useEffect(() => {
         const fetchData = async() => {
             try {
-                const response = await fetch("http://3.111.212.44:5000/api/v1/routes");
+                const response = await fetch("https://api.busroute.info/api/v1/routes");
                 const result = await response.json();
                 setSuggestions(result);
             } catch (error) {
