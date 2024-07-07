@@ -72,7 +72,7 @@ export async function getServerSideProps({ params }) {
 
   try {
     // Fetch route details from the API using busNumber
-    const response = await fetch(`http://3.111.212.44:5000/api/v1/stops`, {
+    const response = await fetch(`https://api.busroute.info/api/v1/routes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
