@@ -2,6 +2,9 @@ import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
+import dynamic from 'next/dynamic';
+
+const Map = dynamic(() => import('../../components/Map'), { ssr: false });
 
 const RouteDetails = ({ busNo, routeDetails }) => {
   const [loading, setLoading] = useState(true);
@@ -10,7 +13,6 @@ const RouteDetails = ({ busNo, routeDetails }) => {
     setLoading(false);
   }, []);
   
-
   return (
     <>
     <Head>
@@ -22,7 +24,7 @@ const RouteDetails = ({ busNo, routeDetails }) => {
     <Navbar/>
     <div className="container mt-5">
       <div className="row">
-        <div className="col-sm-8">
+        <div className="col-sm-5">
           <div className="container bus-info-header">
             <h5 className="text-center py-2">{busName} DTC Bus Route</h5>
           </div>
@@ -46,7 +48,7 @@ const RouteDetails = ({ busNo, routeDetails }) => {
           <p> There are total {routeDetails.stops.length} stops in {busName} DTC bus route.</p>
 
           <h2 className='pt-3'><strong>What is the source and destination stop of {busName} DTC bus?</strong></h2>
-          <p>The {busName} DTC bus starts from {routeDetails[0].stop_name} and the last stop where it 
+          <p>The {busName} DTC bus starts from {routeDetails.stops[0].stop_name} and the last stop where it 
             ends its journey is {routeDetails.stops[routeDetails.stops.length-1].stop_name}. </p>
            
           <h2 className='pt-3'><b>What is fare of {busName} DTC bus?</b></h2>
@@ -57,9 +59,11 @@ const RouteDetails = ({ busNo, routeDetails }) => {
         </div>
         </div>
           
-        <div className="col-sm-4">
-         
+        <div className="col-sm-7 ">
+          <div className="map-container">
+            <Map stops={routeDetails.stops} />
           </div>
+        </div>
       </div>
     </div>
     <Footer/>
