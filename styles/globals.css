@@ -133,4 +133,6 @@ nav .navbar-nav li a{
     list-style: none;
     padding: 0;
 }
-
+.map-container {
+  border:2px dotted grey;
+}
