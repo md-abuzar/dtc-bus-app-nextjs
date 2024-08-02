@@ -48,11 +48,7 @@ const RouteDetails = ({ busNo, routeDetails }) => {
           <p> There are total {routeDetails.stops.length} stops in {busName} DTC bus route.</p>
 
           <h2 className='pt-3'><strong>What is the source and destination stop of {busName} DTC bus?</strong></h2>
-<<<<<<< HEAD
           <p>The {busName} DTC bus starts from {routeDetails.stops[0].stop_name} and the last stop where it 
-=======
-          <p>The {busName} DTC bus starts from {routeDetails[0].stop_name} and the last stop where it 
->>>>>>> 279545f80c288ada19cfed1f900e0ad188301fd0
             ends its journey is {routeDetails.stops[routeDetails.stops.length-1].stop_name}. </p>
            
           <h2 className='pt-3'><b>What is fare of {busName} DTC bus?</b></h2>
