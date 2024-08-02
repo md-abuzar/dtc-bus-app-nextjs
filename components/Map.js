@@ -28,7 +28,11 @@ const Map = ({ stops }) => {
 
   return (
     <div>
+<<<<<<< HEAD
       <MapContainer center={center} zoom={12} style={{ height: '80vh', width: '100%' }}>
+=======
+      <MapContainer center={center} zoom={12} style={{ height: '100vh', width: '100%' }}>
+>>>>>>> ce606907871e7f97ccce92969034878b8c052974
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -44,4 +48,8 @@ const Map = ({ stops }) => {
   );
 };
 
+<<<<<<< HEAD
 export default Map;
+=======
+export default Map;
+>>>>>>> ce606907871e7f97ccce92969034878b8c052974
