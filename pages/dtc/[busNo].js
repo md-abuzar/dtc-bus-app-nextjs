@@ -71,7 +71,24 @@ const RouteDetails = ({ busNo, routeDetails }) => {
   );
 };
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  const response = await fetch(`http://localhost:5000/api/v1/routes_long_name`)
+  const data = await response.json();
+  const paths = data.map(route => {
+    return {
+      params : {
+        busNo:route
+      }
+    }
+  });
+  
+  return {
+    paths:paths,
+  fallback: false,
+  }
+}
+
+export async function getStaticProps({ params }) {
   const { busNo } = params;
 
   try {
