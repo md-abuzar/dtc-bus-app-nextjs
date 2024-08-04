@@ -72,7 +72,7 @@ const RouteDetails = ({ busNo, routeDetails }) => {
 };
 
 export async function getStaticPaths() {
-  const response = await fetch(`http://localhost:5000/api/v1/routes_long_name`)
+  const response = await fetch(`https://api.busroute.info/api/v1/routes_long_name`)
   const data = await response.json();
   const paths = data.map(route => {
     return {
