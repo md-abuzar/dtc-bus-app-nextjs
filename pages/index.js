@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>DTC Bus Route</title>
+        <title>DTC Bus Route | Delhi City Bus Route & Timetable</title>
         <meta name="description" content="Get DTC Bus Route. Search all types of Delhi bus route and stop details in just one click" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

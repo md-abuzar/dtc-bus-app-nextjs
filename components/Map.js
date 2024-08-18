@@ -28,7 +28,7 @@ const Map = ({ stops }) => {
 
   return (
     <div>
-      <MapContainer center={center} zoom={12} style={{ height: '100vh', width: '100%' }}>
+      <MapContainer center={center} zoom={12} style={{ height: '60vh', width: '100%' }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

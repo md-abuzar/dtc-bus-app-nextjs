@@ -45,6 +45,11 @@ nav .navbar-nav li a{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
+  .form-container-pmpl {
+    background-color: #cccce5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
 .autocomplete-container {
       position: relative;
     }
@@ -104,6 +109,67 @@ nav .navbar-nav li a{
       height: 20px;
       z-index: 400;
   }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ul.timeline-pmpml {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline-pmpml:before {
+    content: ' ';
+    background:#073980;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline-pmpml > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline-pmpml > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #073980;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+  
 
   .col-sm-4 {
     background-color:white;
@@ -116,8 +182,18 @@ nav .navbar-nav li a{
     margin-top: -8px ;
   }
 
+  .bus-info-pmpml {
+    background-color:#b2d0fb; 
+    margin-top: -8px ;
+  }
+  
   .bus-info-header {
     background-color:#50623A; 
+    color: #fff;
+  }
+
+  .bus-info-header-pmpml {
+    background-color:#073980; 
     color: #fff;
   }
 
@@ -133,10 +209,6 @@ nav .navbar-nav li a{
     list-style: none;
     padding: 0;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> ce606907871e7f97ccce92969034878b8c052974
 .map-container {
   border:2px dotted grey;
 }

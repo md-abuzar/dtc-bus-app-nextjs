@@ -1,2 +1,2 @@
 User-agent: *
-sitemap: https://www.busroutes.info/sitemap.xml
+sitemap: https://busroute.info/sitemap.xml
