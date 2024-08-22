@@ -43,7 +43,16 @@ const RouteDetails = ({ busNo, routeDetails }) => {
             })}
           </ul>
 
-          <div className="container dtc-bus-route-container mt-4 pt-3 pb-5 px-4">
+        </div>
+          
+        <div className="col-sm-7 ">
+          <div className="map-container">
+            <Map stops={routeDetails.stops} />
+          </div>
+        </div>
+      </div>
+
+      <div className="container dtc-bus-route-container mt-4 pt-3 pb-5 px-4">
           <h2 className='pt-3'><strong>How many stops does {busName} DTC bus Route has?</strong></h2>
           <p> There are total {routeDetails.stops.length} stops in {busName} DTC bus route.</p>
 
@@ -57,14 +66,6 @@ const RouteDetails = ({ busNo, routeDetails }) => {
           Rs. 5 to Rs. 15 and if it is red color bus then the ticket price will be somewhere between Rs. 10 to 
           Rs. 30 depending upon the source and destination stop.</p>
         </div>
-        </div>
-          
-        <div className="col-sm-7 ">
-          <div className="map-container">
-            <Map stops={routeDetails.stops} />
-          </div>
-        </div>
-      </div>
     </div>
     <Footer/>
   </>

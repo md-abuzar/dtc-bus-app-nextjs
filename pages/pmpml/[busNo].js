@@ -73,12 +73,13 @@ const RouteDetails = ({ busNo, routeDetails }) => {
 };
 
 export async function getStaticPaths() {
-  const response = await fetch(`https://api.busroute.info/api/v1/pmpml/routes`)
+  const response = await fetch(`https://api.busroute.info/api/v1/pmpml/routes_id`)
   const data = await response.json();
+  console.log(data)
   const paths = data.map(route => {
     return {
       params : {
-        busNo:'333'
+        busNo:route
       }
     }
   });

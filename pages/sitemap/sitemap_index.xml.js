@@ -1,0 +1,16 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>https://busroute.info/dtc-sitemap.xml</loc>
+		<lastmod>2024-08-22T02:13:10+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>https://busroute.info/pmpml-sitemap.xml</loc>
+		<lastmod>2024-08-22T22:14:19+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>https://busroute.info/page-sitemap.xml</loc>
+		<lastmod>2024-08-22T02:13:10+00:00</lastmod>
+	</sitemap>
+</sitemapindex>
