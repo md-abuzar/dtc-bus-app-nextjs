@@ -73,18 +73,16 @@ const RouteDetails = ({ busNo, routeDetails }) => {
 };
 
 export async function getStaticPaths() {
-  const response = await fetch(`https://api.busroute.info/api/v1/routes_long_name`)
+  const response = await fetch(`http://192.168.0.108:5000/api/v1/routes_long_name`)
   const data = await response.json();
-  const paths = data.map(route => {
-    return {
-      params : {
-        busNo:route
-      }
-    }
-  });
+
+  // Generate paths for each bus route
+  const paths = data.map((route) => ({
+    params: { busNo: route },
+  }));
   
   return {
-    paths:paths,
+    paths,
   fallback: false,
   }
 }
@@ -94,7 +92,7 @@ export async function getStaticProps({ params }) {
 
   try {
     // Fetch route details from the API using busNumber
-    const response = await fetch(`https://api.busroute.info/api/v1/stops`, {
+    const response = await fetch(`http://192.168.0.108:5000/api/v1/stops`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

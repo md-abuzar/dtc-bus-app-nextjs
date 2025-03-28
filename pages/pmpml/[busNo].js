@@ -73,7 +73,7 @@ const RouteDetails = ({ busNo, routeDetails }) => {
 };
 
 export async function getStaticPaths() {
-  const response = await fetch(`https://api.busroute.info/api/v1/pmpml/routes_id`)
+  const response = await fetch(`http://192.168.0.108:5000/api/v1/pmpml/routes_id`)
   const data = await response.json();
   console.log(data)
   const paths = data.map(route => {
@@ -96,7 +96,7 @@ export async function getStaticProps({ params }) {
 
   try {
     // Fetch route details from the API using busNumber
-    const response = await fetch(`https://api.busroute.info/api/v1/pmpml/stops`, {
+    const response = await fetch(`http://192.168.0.108:5000/api/v1/pmpml/stops`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
