@@ -23,7 +23,7 @@ function SiteMap() {
   // getServerSideProps will do the heavy lifting
 }
 
-export async function getServerSideProps({ res }) {
+export async function getStaticProps({ res }) {
   // We make an API call to gather the URLs for our site
   const request = await fetch(`http://3.111.212.44:5000/api/v1/routes_long_name`);
   const data = await request.json();
