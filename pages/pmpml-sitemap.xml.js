@@ -31,11 +31,6 @@ export async function getStaticProps() {
   // We generate the XML sitemap with the posts data
   const sitemap = generateSiteMap(data);
 
-  res.setHeader('Content-Type', 'text/xml');
-  // we send the XML to the browser
-  res.write(sitemap);
-  res.end();
-
   return {
     props: {sitemap,},
   };
