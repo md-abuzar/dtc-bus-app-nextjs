@@ -12,7 +12,7 @@ const SearchBar = () => {
     useEffect(() => {
         const fetchData = async() => {
             try {
-                const response = await fetch("http://192.168.0.108:5000/api/v1/pmpml/routes");
+                const response = await fetch("http://3.111.212.44:5000/api/v1/pmpml/routes");
                 const result = await response.json();
                 setSuggestions(result);
             } catch (error) {
@@ -34,7 +34,7 @@ const SearchBar = () => {
 
       const onSubmit = async() => {
         try {
-          const response = await fetch('http://192.168.0.108:5000/api/v1/pmpml/num', {
+          const response = await fetch('http://3.111.212.44:5000/api/v1/pmpml/num', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

@@ -25,7 +25,7 @@ function SiteMap() {
 
 export async function getServerSideProps({ res }) {
   // We make an API call to gather the URLs for our site
-  const request = await fetch(`https://api.busroute.info/api/v1/routes_long_name`);
+  const request = await fetch(`http://3.111.212.44:5000/api/v1/routes_long_name`);
   const data = await request.json();
 
   // We generate the XML sitemap with the posts data
