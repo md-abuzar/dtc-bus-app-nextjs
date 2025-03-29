@@ -19,11 +19,11 @@ function generateSiteMap(data) {
  `;
 }
 
-function SiteMap() {
-  // getServerSideProps will do the heavy lifting
+function SiteMap({ sitemap }) {
+  return <pre>{sitemap}</pre>;
 }
 
-export async function getStaticProps({ res }) {
+export async function getStaticProps() {
   // We make an API call to gather the URLs for our site
   const request = await fetch(`http://3.111.212.44:5000/api/v1/routes_long_name`);
   const data = await request.json();
@@ -31,13 +31,8 @@ export async function getStaticProps({ res }) {
   // We generate the XML sitemap with the posts data
   const sitemap = generateSiteMap(data);
 
-  res.setHeader('Content-Type', 'text/xml');
-  // we send the XML to the browser
-  res.write(sitemap);
-  res.end();
-
   return {
-    props: {},
+    props: {sitemap,},
   };
 }
 
