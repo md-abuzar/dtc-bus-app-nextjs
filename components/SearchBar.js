@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { useRouter } from 'next/router';
+import routesData from '../src/data/routes.json'
+import { slugify } from "@/utility/slugify";
+
 
 
 const SearchBar = () => {
@@ -7,20 +10,24 @@ const SearchBar = () => {
     const router = useRouter();
     const [busNo, setBusNo] = useState("");
     const [suggestions, setSuggestions] = useState([]);
-    
 
     useEffect(() => {
-        const fetchData = async() => {
-            try {
-                const response = await fetch("http://3.111.212.44:5000/api/v1/routes");
-                const result = await response.json();
-                setSuggestions(result);
-            } catch (error) {
-                console.error('Error fetching suggestions:', error);
-            }    
-        };
-        fetchData();
+      setSuggestions(routesData);
     }, []);
+  
+    // useEffect(() => {
+
+    //     const fetchData = async() => {
+    //         try {
+    //             const response = await fetch("http://3.111.212.44:5000/api/v1/routes");
+    //             const result = await response.json();
+    //             setSuggestions(result);
+    //         } catch (error) {
+    //             console.error('Error fetching suggestions:', error);
+    //         }    
+    //     };
+    //     fetchData();
+    // }, []);
 
     const filteredSuggestion = busNo ? suggestions.filter((route) =>
         route.toLowerCase().includes(busNo.toLowerCase())
@@ -39,12 +46,12 @@ const SearchBar = () => {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({"route":busNo}),
+            body: JSON.stringify({"route":slugify(busNo)}),
           });
         
           if (response.ok) {
             const data = await response.json();
-            router.push(`/dtc/${data}`);
+            router.push(`/dtc/${slugify(busNo)}`);
             console.log('Data sent successfully!');
             
           } else {
