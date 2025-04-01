@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useRouter } from 'next/router';
+import routesData from '../../src/data/pmpml-routes.json'
 
 
 const SearchBar = () => {
@@ -8,19 +9,22 @@ const SearchBar = () => {
     const [busNo, setBusNo] = useState("");
     const [suggestions, setSuggestions] = useState([]);
     
-
     useEffect(() => {
-        const fetchData = async() => {
-            try {
-                const response = await fetch("http://3.111.212.44:5000/api/v1/pmpml/routes");
-                const result = await response.json();
-                setSuggestions(result);
-            } catch (error) {
-                console.error('Error fetching suggestions:', error);
-            }    
-        };
-        fetchData();
-    }, []);
+          setSuggestions(routesData);
+        }, []);
+
+    // useEffect(() => {
+    //     const fetchData = async() => {
+    //         try {
+    //             const response = await fetch("http://3.111.212.44:5000/api/v1/pmpml/routes");
+    //             const result = await response.json();
+    //             setSuggestions(result);
+    //         } catch (error) {
+    //             console.error('Error fetching suggestions:', error);
+    //         }    
+    //     };
+    //     fetchData();
+    // }, []);
 
     const filteredSuggestion = busNo ? suggestions.filter((route) =>
         route.toLowerCase().includes(busNo.toLowerCase())
@@ -30,6 +34,11 @@ const SearchBar = () => {
         setBusNo(route);
         setSuggestions([]);
       };
+
+        // const onSubmit = () => {
+        //       // Just navigate to the new route on submit
+        //       router.push(`/dtc/${slugify(busNo)}`);
+        //     };
 
 
       const onSubmit = async() => {
@@ -55,9 +64,9 @@ const SearchBar = () => {
         }
         
 
-      //router.push(`/routes/${busNo}`);
+      // //router.push(`/routes/${busNo}`);
       
-      }
+       }
     
 
     return (
