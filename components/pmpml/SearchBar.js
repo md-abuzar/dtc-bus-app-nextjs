@@ -35,38 +35,38 @@ const SearchBar = () => {
         setSuggestions([]);
       };
 
-        // const onSubmit = () => {
-        //       // Just navigate to the new route on submit
-        //       router.push(`/dtc/${slugify(busNo)}`);
-        //     };
+        const onSubmit = () => {
+              // Just navigate to the new route on submit
+              router.push(`/dtc/${slugify(busNo)}`);
+            };
 
 
-      const onSubmit = async() => {
-        try {
-          const response = await fetch('http://3.111.212.44:5000/api/v1/pmpml/num', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({"route":busNo}),
-          });
+      // const onSubmit = async() => {
+      //   try {
+      //     const response = await fetch('http://3.111.212.44:5000/api/v1/pmpml/num', {
+      //       method: 'POST',
+      //       headers: {
+      //         'Content-Type': 'application/json',
+      //       },
+      //       body: JSON.stringify({"route":busNo}),
+      //     });
         
-          if (response.ok) {
-            const data = await response.json();
-            router.push(`/pmpml/${data}`);
-            console.log('Data sent successfully!');
+      //     if (response.ok) {
+      //       const data = await response.json();
+      //       router.push(`/pmpml/${data}`);
+      //       console.log('Data sent successfully!');
             
-          } else {
-            console.error('Failed to send Data.');
-          }
-        } catch (error) {
-          console.error('Error sending data:', error);
-        }
+      //     } else {
+      //       console.error('Failed to send Data.');
+      //     }
+      //   } catch (error) {
+      //     console.error('Error sending data:', error);
+      //   }
         
 
       // //router.push(`/routes/${busNo}`);
       
-       }
+      // }
     
 
     return (
