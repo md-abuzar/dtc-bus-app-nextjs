@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useRouter } from 'next/router';
 import routesData from '../../src/data/pmpml-routes.json'
+import { slugify } from "@/utility/slugify";
 
 
 const SearchBar = () => {
