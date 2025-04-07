@@ -38,7 +38,7 @@ const SearchBar = () => {
 
         const onSubmit = () => {
               // Just navigate to the new route on submit
-              router.push(`/dtc/${slugify(busNo)}`);
+              router.push(`/pmpml/${slugify(busNo)}`);
             };
 
 
