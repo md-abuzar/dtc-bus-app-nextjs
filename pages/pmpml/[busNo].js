@@ -75,8 +75,6 @@ const RouteDetails = ({ busNo, routeDetails }) => {
 export async function getStaticPaths() {
   const response = await fetch(`http://3.111.212.44:5000/api/v1/pmpml/routes_id`)
   const data = await response.json();
-  
-
   const paths = data.map((route) => ({
       params : { busNo:route },
   }));
